@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# My React + Vite Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a high-performance React project using **Vite**, with a CI/CD pipeline set up via GitHub Actions. The project follows best practices for linting, testing, and optimization.
 
-Currently, two official plugins are available:
+## Installation & Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/sargsalbert/canvas-app-2d.git
+   cd canvas-app-2d
 
-## Expanding the ESLint configuration
+  Install dependencies: npm install
+  Run the development server: npm run dev
+  Run tests: npm run test
+  Build for production: npm run build
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Performance Optimizations 
+This project is optimized for speed and efficiency using:
+- **Vite's native optimizations**: Fast cold starts, hot module replacement (HMR), and optimized builds.
+- **Tree-shaking & dead code elimination**: Reducing bundle size by removing unused code.
+- **Minification & Compression**:
+  - Uses **Terser** for minification.
+  - Supports **gzip compression** for smaller asset sizes.
+- **ESLint & Prettier**: Ensures clean and consistent code.
+- **CI/CD pipeline**: Automates linting, testing, and build checks before merging.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## CI/CD Pipeline (GitHub Actions)
+The CI/CD pipeline ensures code quality before merging by running:
+1. **Linting & formatting checks** (ESLint & Prettier)
+2. **Unit tests** (Vitest)
+3. **Production build verification** (Vite)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The workflow is defined in `.github/workflows/ci.yml` and runs on **every pull request**.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Deployment
+This project is deployed on **Vercel**.  
+🔗 [https://canvas-app-2d.vercel.app/]

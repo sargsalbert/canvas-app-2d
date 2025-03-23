@@ -12,8 +12,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/runtime": "^7.26.10",
+    "@tailwindcss/vite": "^4.0.15",
+    "@types/fabric": "^5.3.10",
+    "fabric": "^6.6.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.15",
     "vite-plugin-compression": "^0.5.1"
   },
   "devDependencies": {
